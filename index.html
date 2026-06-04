@@ -1,13 +1,89 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Matheus Henrique | Portfólio</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>Matheus Henrique</h1>
-  <h2>Portfólio de Engenharia de Dados</h2>
-  <p>Site publicado com GitHub Pages.</p>
+
+  <header>
+    <h1>Matheus Henrique</h1>
+    <h2>Portfólio de Engenharia de Dados</h2>
+
+    <p>
+      Engenheiro de Dados com experiência em pipelines, lakehouse, orquestração,
+      processamento distribuído, modelagem analítica e governança de dados.
+    </p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Projetos</h2>
+
+      <article class="project">
+        <h3></h3>
+
+        <p>
+          <strong>Contexto:</strong> Cliente do ramo de bens de capital, necessitou de realizar uma mudança
+          e modernizaçao na área de dados, o projeto inciou na fase 1, onde precisamos criar uma datalakehouse,
+          onde precisa replicar uns dashboard de um software antigo deles, chamado fastBI
+        </p>
+
+        <p>
+          <strong>Dor:</strong> Os dados estavam concentrados em bases relacionais, com alto volume,
+          baixa rastreabilidade analítica, dificuldade de reprocessamento e dependência de consultas
+          diretamente na origem transacional, além de que o fastBI era extramente lento e isso impactava nas
+          analises dos setores
+        </p>
+
+        <p>
+          <strong>Solução:</strong> Dessenvolvi uma solução toda opensource, uma vez que isso era um pedido do cliente
+          seguindo o que uma Modern Stack apresentava para um lakehouse.
+        </p>
+
+        <p>
+          <strong>Arquitetura:</strong> Dividir a arquitetura em 3 partes, sendo a primeira o datalake, a segunda a parte
+          de governaça e a terceira a parte de orquestraçao.
+          <strong>Datalakehouse:</strong> Para a camada bronze, usei Spark/Pyspark para extração de dados e salveis em formato de tabela usando iceberg. 
+          Para os arquivos físicos usei minIO
+          Na camada prata e gold utilizei o Trino em conjunto com o DBT, com isso eu conseguiria usar meus arquivos que foram salvos em tabelas 
+          e também consegui perceber que meu cliente nao tinha familaridade com programação. Entao o ponto de manutenibilidade foi levado em consideração
+          na hora da escolha das ferramentas. Inicialmente sugerimos usar cluster ou uma arquitetura distruibuida, porém, o cliente 
+          optou por centralizar todos os serviços em uma máquina parruda.
+          Com isso em mente dockerizamos os serviços e setamos após u
+         
+          
+          
+        </p>
+
+        <p>
+          <strong>Resultado:</strong> criação de uma base lakehouse estruturada, com dados disponíveis
+          para consumo analítico, maior controle sobre ingestão e reprocessamento, melhor separação
+          entre dados brutos, tratados e modelos de negócio.
+        </p>
+
+        <p>
+          <strong>Aprendizados:</strong> aprofundamento em arquitetura lakehouse, processamento
+          distribuído, modelagem analítica, orquestração de pipelines, integração entre ferramentas
+          open source e boas práticas de engenharia de dados.
+        </p>
+
+        <a href="#" target="_blank">Ver documentação técnica</a>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Site publicado com GitHub Pages.</p>
+  </footer>
+
 </body>
 </html>
